@@ -1,5 +1,5 @@
 import React from "react";
-import "./bookcard.css";
+import "./Bookcard.css";
 
 /**
  * BookCard accepts:
