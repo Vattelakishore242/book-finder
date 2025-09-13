@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* ---------- Root Variables ---------- */
+:root {
+  /* Colors */
+  --background: 0 0% 100%;
+  --foreground: 225 10% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 225 10% 10%;
+  --primary: 239 77% 53%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 269 85% 68%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 331 77% 56%;
+  --accent-foreground: 0 0% 100%;
+  --border: 220 13% 91%;
+  --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+
+  /* Spacing and sizing */
+  --spacing: 0.25rem;
+  --radius: 1rem;
+
+  :root {
+  --background: 210 50% 15%; /* dark bluish background */
+  --foreground: 0 0% 100%;   /* white text */
+}
+body {
+  background-color: hsl(var(--background)); /* now it's dark */
+  color: hsl(var(--foreground));
+}
+
+
+  /* Fonts */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Inter', serif;
+  --font-mono: 'Inter', monospace;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 8px -1px hsl(0 0% 0% / .1), 0 1px 2px -2px hsl(0 0% 0% / .1);
+  --shadow-md: 0 4px 8px -1px hsl(0 0% 0% / .1), 0 2px 4px -2px hsl(0 0% 0% / .1);
+  --shadow-lg: 0 4px 8px -1px hsl(0 0% 0% / .1), 0 4px 6px -2px hsl(0 0% 0% / .1);
+  --shadow-xl: 0 4px 8px -1px hsl(0 0% 0% / .1), 0 8px 10px -2px hsl(0 0% 0% / .1);
+}
+
+/* ---------- Base Styles ---------- */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+
+html {
+  line-height: 1.5;
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  line-height: inherit;
+  letter-spacing: 0em;
+}
+
+/* ---------- Glassmorphism Cards ---------- */
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  box-shadow: var(--shadow-2xl);
+  transition: box-shadow 0.2s cubic-bezier(.4,0,.2,1), transform 0.3s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.2), 0px 10px 10px -5px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+/* ---------- Gradient Buttons ---------- */
+.glass-button {
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  color: hsl(var(--primary-foreground));
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.glass-button:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+/* ---------- Floating Animated Circles ---------- */
+.floating-circle {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.3;
+  animation: pulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.1) translateY(-10px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+/* ---------- Utility Classes ---------- */
+.text-glow {
+  text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--secondary));
+}
+
+.backdrop-glass {
+  backdrop-filter: blur(12px) brightness(1.2);
+  -webkit-backdrop-filter: blur(12px) brightness(1.2);
+}

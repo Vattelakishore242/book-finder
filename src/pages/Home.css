@@ -1,0 +1,243 @@
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #8b5cf6;
+  --bg-light: #f3f4f6;
+  --bg-dark: #1f2937;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-dark: rgba(31, 41, 55, 0.85);
+  --font-main: 'Poppins', sans-serif;
+  --text-color-light: #1f2937;
+  --text-color-dark: #f3f4f6;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--bg-light);
+  color: var(--text-color-light);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-color-dark);
+}
+
+/* Container */
+.home-container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 2rem;
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  transition: background 0.3s ease;
+}
+
+.dark-mode .home-container {
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+/* Header */
+.home-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.home-subtitle {
+  font-size: 1.25rem;
+  color: #4b5563;
+}
+
+.dark-mode .home-subtitle {
+  color: #d1d5db;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: none;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Search */
+.search-wrapper {
+  margin-bottom: 2rem;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.search-input {
+  padding: 0.75rem 1rem;
+  width: 50%;
+  border-radius: 1rem;
+  border: none;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-size: 1rem;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Voice Button */
+.voice-button {
+  padding: 0.75rem 1.2rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--secondary-color);
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.voice-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Autocomplete Suggestions */
+.suggestions-list {
+  margin-top: 0.5rem;
+  list-style: none;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  background: rgba(255,255,255,0.9);
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.suggestions-list li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggestions-list li:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Books Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Status/Error Text */
+.status-text {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+.error-text {
+  color: #ef4444;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  background: #6366f1;
+  color: white;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover {
+  background: #4f46e5;
+}
+
+/* Favorites Section */
+.favorites-section {
+  margin-top: 3rem;
+}
+
+.favorites-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Listen Button inside modal (if any) */
+.listen-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  background: #10b981;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.listen-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Dark mode adjustments */
+.dark-mode .search-input,
+.dark-mode .suggestions-list,
+.dark-mode .books-grid {
+  background: rgba(31, 41, 55, 0.85);
+  color: var(--text-color-dark);
+}
+
+.dark-mode .search-button,
+.dark-mode .voice-button {
+  color: white;
+}
+
+.dark-mode .suggestions-list li:hover {
+  background: var(--secondary-color);
+}
