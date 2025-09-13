@@ -8,6 +8,6 @@ export default defineConfig({
     host: true,         // allow external access
     port: 5173,         // default Vite port
     strictPort: false,  // fallback if port is busy
-    allowedHosts: 'all' // allow any host (Render, StackBlitz, CodeSandbox, etc.)
+    allowedHosts: ['book-finder-n9ch.onrender.com'] // specific host allowed
   }
 });
