@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import BookCard from "../components/BookCard";
 import BookModal from "../components/BookModal";
-import "./home.css";
+import "./Home.css";
 
 export default function Home() {
   const [query, setQuery] = useState("");
