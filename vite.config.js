@@ -4,7 +4,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true, // allow all hosts
+    host: true,
+    port: 5173,
     strictPort: false,
-  },
+    allowedHosts: 'all'   // allow any host (recommended for Render/StackBlitz/CodeSandbox)
+  }
 });
